@@ -26,7 +26,10 @@ export const Tooltip = ({ content, children }) => {
             clearTimeout(hoverTimeout.current);
             hoverTimeout.current = null;
         }
-        setHover(false);
+
+        setTimeout(() => {
+          setHover(false);
+        }, 3000);
     };
 
     const updateTooltipPosition = () => {
@@ -79,7 +82,7 @@ export const Tooltip = ({ content, children }) => {
         <div
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className="relative inline-flex flex-col items-center ">
+            className="relative inline-flex flex-col items-center">
             {hover && (
                 <div
                     ref={tooltipRef}
@@ -92,7 +95,7 @@ export const Tooltip = ({ content, children }) => {
 
                         <div
                             ref={tooltipContentRef}
-                            className="relative whitespace-nowrap rounded-md bg-slate-800 p-2.5 text-[14px] leading-relaxed tracking-wide  text-white shadow-sm [font-weight:400]">
+                            className="relative whitespace-nowrap rounded-md bg-slate-800 border border-white p-2.5 text-[14px] leading-relaxed tracking-wide  text-white shadow-sm [font-weight:400]">
                             {content}
                         </div>
 
@@ -124,7 +127,7 @@ const TriangleInvertedFilled = forwardRef((props, ref) => {
                 strokeWidth="2">
                 <path d="M0 0h24v24H0z"></path>
                 <path
-                    fill="currentColor"
+                    fill="white"
                     d="M20.118 3H3.893A2.914 2.914 0 0 0 1.39 7.371L9.506 20.92a2.917 2.917 0 0 0 4.987.005l8.11-13.539A2.914 2.914 0 0 0 20.117 3z"></path>
             </g>
         </svg>
@@ -143,12 +146,12 @@ const TriangleFilled = forwardRef((props, ref) => {
             {...props}>
             <g
                 fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2">
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2">
                 <path d="M0 0h24v24H0z"></path>
                 <path
-                    fill="currentColor"
+                    fill="white"
                     d="M12 1.67a2.914 2.914 0 0 0-2.492 1.403L1.398 16.61a2.914 2.914 0 0 0 2.484 4.385h16.225a2.914 2.914 0 0 0 2.503-4.371L14.494 3.078A2.917 2.917 0 0 0 12 1.67"></path>
             </g>
         </svg>

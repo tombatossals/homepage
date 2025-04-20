@@ -611,7 +611,12 @@
     },
     "capsman": {
       "radios": "Radios",
-      "clients": "Clientes"
+      "clients": "Clientes",
+      "24ghz": "2.4GHz",
+      "5ghz": "5GHz",
+      "cpuLoad": "CPU Load",
+      "uptime": "Uptime",
+      "version": "Version"
     },
     "xteve": {
         "streams_all": "Todas las transmisiones",

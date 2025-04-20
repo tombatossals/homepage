@@ -6,6 +6,9 @@ const widget = {
   proxyHandler: genericProxyHandler,
 
   mappings: {
+    resource: {
+      endpoint: "system/resource",
+    },
     caps: {
       endpoint: "caps-man/remote-cap",
     },
