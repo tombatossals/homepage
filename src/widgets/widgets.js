@@ -61,6 +61,7 @@ import mastodon from "./mastodon/widget";
 import mealie from "./mealie/widget";
 import medusa from "./medusa/widget";
 import mikrotik from "./mikrotik/widget";
+import capsman from "./capsman/widget";
 import minecraft from "./minecraft/widget";
 import miniflux from "./miniflux/widget";
 import mjpeg from "./mjpeg/widget";
@@ -203,6 +204,7 @@ const widgets = {
   minecraft,
   miniflux,
   mikrotik,
+  capsman,
   mjpeg,
   moonraker,
   mylar,

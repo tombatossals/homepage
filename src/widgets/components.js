@@ -72,6 +72,7 @@ const components = {
   minecraft: dynamic(() => import("./minecraft/component")),
   miniflux: dynamic(() => import("./miniflux/component")),
   mikrotik: dynamic(() => import("./mikrotik/component")),
+  capsman: dynamic(() => import("./capsman/component")),
   mjpeg: dynamic(() => import("./mjpeg/component")),
   moonraker: dynamic(() => import("./moonraker/component")),
   mylar: dynamic(() => import("./mylar/component")),

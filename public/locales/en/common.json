@@ -609,6 +609,10 @@
         "uptime": "Uptime",
         "numberOfLeases": "Leases"
     },
+    "capsman": {
+      "radios": "Radios",
+      "clients": "Clients"
+    },
     "xteve": {
         "streams_all": "All Streams",
         "streams_active": "Active Streams",
