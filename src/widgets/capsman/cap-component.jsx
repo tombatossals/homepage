@@ -1,11 +1,8 @@
-
 import Block from "components/services/widget/block";
-import Container from "components/services/widget/container";
-import RadioIcon from "./radio-icon";
+import { useTranslation } from "next-i18next";
+
 import { Tooltip } from "./tooltip";
 
-import { useTranslation } from "next-i18next";
-import useWidgetAPI from "utils/proxy/use-widget-api";
 
 const getContent = (data) =>{
   return (
