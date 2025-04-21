@@ -3,8 +3,7 @@ import { useTranslation } from "next-i18next";
 
 import { Tooltip } from "./tooltip";
 
-
-const getContent = (data) =>{
+const getContent = (data) => {
   return (
     <table className="border-separate border-spacing-2 text-xs">
       <thead>
@@ -15,7 +14,7 @@ const getContent = (data) =>{
           <th className="text-center">Interface</th>
           <th className="text-center">Uptime</th>
         </tr>
-        </thead>
+      </thead>
       <tbody>
         {data.map((client, i) => (
           <tr key={i}>
@@ -29,43 +28,34 @@ const getContent = (data) =>{
       </tbody>
     </table>
   );
-}
+};
 
 const CapComponent = ({ service, cap, clients }) => {
   const { widget } = service;
   const { t } = useTranslation();
-  const clients24 = clients.filter(d => d.interface.endsWith("24"));
-  const clients5 = clients.filter(d => d.interface.endsWith("5"));
+  const clients24 = clients.filter((d) => d.interface.endsWith("24"));
+  const clients5 = clients.filter((d) => d.interface.endsWith("5"));
 
   return (
-      <>
-        <div className="text-xs text-right">{cap.identity}</div>
-        <Tooltip content={getContent(clients)}>
-          <div className="cursor-pointer">
-            <Block
-              label={t("capsman.clients")}
-              value={clients.length}
-            />
-          </div>
-        </Tooltip>
-        <Tooltip content={getContent(clients24)} className="cursor-pointer">
-          <div className="cursor-pointer">
-            <Block
-              label="capsman.24ghz"
-              value={clients24.length}
-            />
-          </div>
-        </Tooltip>
-        <Tooltip content={getContent(clients5)} className="cursor-pointer">
-          <div className="cursor-pointer">
-            <Block
-              label="capsman.5ghz"
-              value={clients5.length}
-            />
-          </div>
-        </Tooltip>
-      </>
-  )
+    <>
+      <div className="text-xs text-right">{cap.identity}</div>
+      <Tooltip content={getContent(clients)}>
+        <div className="cursor-pointer">
+          <Block label={t("capsman.clients")} value={clients.length} />
+        </div>
+      </Tooltip>
+      <Tooltip content={getContent(clients24)} className="cursor-pointer">
+        <div className="cursor-pointer">
+          <Block label="capsman.24ghz" value={clients24.length} />
+        </div>
+      </Tooltip>
+      <Tooltip content={getContent(clients5)} className="cursor-pointer">
+        <div className="cursor-pointer">
+          <Block label="capsman.5ghz" value={clients5.length} />
+        </div>
+      </Tooltip>
+    </>
+  );
 };
 
 export default CapComponent;
