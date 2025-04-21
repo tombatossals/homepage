@@ -13,10 +13,6 @@ export const Tooltip = ({ clients, content, children, hover, setHover, leave }) 
   const tooltipRef = useRef(null);
   const delay = 300;
 
-  if (clients === 0) {
-    return <div className="relative inline-flex flex-col items-center">{children}</div>;
-  }
-
   const handleMouseEnter = () => {
     if (leave) {
       clearTimeout(leave);
@@ -83,6 +79,10 @@ export const Tooltip = ({ clients, content, children, hover, setHover, leave }) 
       window.removeEventListener("resize", handleResize);
     };
   }, [hover]);
+
+  if (clients === 0) {
+    return <div className="relative inline-flex flex-col items-center">{children}</div>;
+  }
 
   return (
     <div

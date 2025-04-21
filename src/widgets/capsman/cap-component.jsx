@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 
 import { Tooltip } from "./tooltip";
 
-const getContent = (data, setHover, leave) => {
+const GetContent = (data, setHover, leave) => {
   const hoverTimeout = useRef(null);
 
   const handleMouseEnter = () => {
@@ -88,7 +88,7 @@ const CapComponent = ({ service, cap, clients }) => {
       <div className="text-xs text-right">{cap.identity}</div>
       <Tooltip
         clients={clients.length}
-        content={getContent(clients, setHover, leave)}
+        content={GetContent(clients, setHover, leave)}
         hover={hover}
         setHover={setHover}
         leave={leave}
@@ -99,7 +99,7 @@ const CapComponent = ({ service, cap, clients }) => {
       </Tooltip>
       <Tooltip
         clients={clients24.length}
-        content={getContent(clients24, setHover24, leave24)}
+        content={GetContent(clients24, setHover24, leave24)}
         hover={hover24}
         setHover={setHover24}
         leave={leave24}
@@ -110,7 +110,7 @@ const CapComponent = ({ service, cap, clients }) => {
       </Tooltip>
       <Tooltip
         clients={clients5.length}
-        content={getContent(clients5, setHover5, leave5)}
+        content={GetContent(clients5, setHover5, leave5)}
         hover={hover5}
         setHover={setHover5}
         leave={leave5}
