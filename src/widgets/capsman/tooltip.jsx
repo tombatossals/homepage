@@ -1,21 +1,28 @@
 // Author: https://gourav.io/blog/react-tooltip-component //
-import { forwardRef, useEffect, useRef, useState } from "react";
+import { forwardRef, useEffect, useRef } from "react";
 
 /**
  * content: use `<br/>` to break lines so that tooltip is not too wide
  * @returns
  */
-export const Tooltip = ({ content, children }) => {
-  const [hover, setHover] = useState(false);
+export const Tooltip = ({ clients, content, children, hover, setHover, leave }) => {
   const hoverTimeout = useRef(null);
   const tooltipContentRef = useRef(null);
   const triangleRef = useRef(null);
   const triangleInvertedRef = useRef(null);
   const tooltipRef = useRef(null);
-
   const delay = 300;
 
+  if (clients === 0) {
+    return <div className="relative inline-flex flex-col items-center">{children}</div>;
+  }
+
   const handleMouseEnter = () => {
+    if (leave) {
+      clearTimeout(leave);
+      leave = null;
+    }
+
     hoverTimeout.current = setTimeout(() => {
       setHover(true);
     }, delay);
@@ -26,7 +33,9 @@ export const Tooltip = ({ content, children }) => {
       clearTimeout(hoverTimeout.current);
       hoverTimeout.current = null;
     }
-    setHover(false);
+    leave = setTimeout(() => {
+      setHover(false);
+    }, delay);
   };
 
   const updateTooltipPosition = () => {

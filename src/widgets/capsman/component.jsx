@@ -3,7 +3,6 @@ import Container from "components/services/widget/container";
 import { useTranslation } from "next-i18next";
 
 import CapComponent from "./cap-component";
-import RadioIcon from "./radio-icon";
 
 import useWidgetAPI from "utils/proxy/use-widget-api";
 
@@ -21,11 +20,7 @@ export default function Component({ service }) {
   }
 
   if (!capsData || !clientsData || !resourceData) {
-    return (
-      <Container service={service}>
-        <RadioIcon />
-      </Container>
-    );
+    return <Container service={service}></Container>;
   }
 
   return (

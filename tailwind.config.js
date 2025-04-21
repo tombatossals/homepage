@@ -16,6 +16,9 @@ module.exports = {
   },
   theme: {
     extend: {
+      fontSize: {
+        'xxs': '0.625rem', // 10px
+      },
       colors: {
         theme: {
           50: "rgb(var(--color-50) / <alpha-value>)",
