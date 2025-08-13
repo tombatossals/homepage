@@ -13,6 +13,7 @@ import calendar from "./calendar/widget";
 import calibreweb from "./calibreweb/widget";
 import changedetectionio from "./changedetectionio/widget";
 import channelsdvrserver from "./channelsdvrserver/widget";
+import checkmk from "./checkmk/widget";
 import cloudflared from "./cloudflared/widget";
 import coinmarketcap from "./coinmarketcap/widget";
 import crowdsec from "./crowdsec/widget";
@@ -24,6 +25,7 @@ import downloadstation from "./downloadstation/widget";
 import emby from "./emby/widget";
 import esphome from "./esphome/widget";
 import evcc from "./evcc/widget";
+import filebrowser from "./filebrowser/widget";
 import fileflows from "./fileflows/widget";
 import firefly from "./firefly/widget";
 import flood from "./flood/widget";
@@ -49,9 +51,11 @@ import immich from "./immich/widget";
 import jackett from "./jackett/widget";
 import jdownloader from "./jdownloader/widget";
 import jellyseerr from "./jellyseerr/widget";
+import jellystat from "./jellystat/widget";
 import karakeep from "./karakeep/widget";
 import kavita from "./kavita/widget";
 import komga from "./komga/widget";
+import komodo from "./komodo/widget";
 import kopia from "./kopia/widget";
 import lidarr from "./lidarr/widget";
 import linkwarden from "./linkwarden/widget";
@@ -122,6 +126,7 @@ import tdarr from "./tdarr/widget";
 import technitium from "./technitium/widget";
 import traefik from "./traefik/widget";
 import transmission from "./transmission/widget";
+import trilium from "./trilium/widget";
 import truenas from "./truenas/widget";
 import tubearchivist from "./tubearchivist/widget";
 import unifi from "./unifi/widget";
@@ -130,6 +135,7 @@ import uptimekuma from "./uptimekuma/widget";
 import uptimerobot from "./uptimerobot/widget";
 import urbackup from "./urbackup/widget";
 import vikunja from "./vikunja/widget";
+import wallos from "./wallos/widget";
 import watchtower from "./watchtower/widget";
 import wgeasy from "./wgeasy/widget";
 import whatsupdocker from "./whatsupdocker/widget";
@@ -151,6 +157,7 @@ const widgets = {
   calibreweb,
   changedetectionio,
   channelsdvrserver,
+  checkmk,
   cloudflared,
   coinmarketcap,
   crowdsec,
@@ -162,6 +169,7 @@ const widgets = {
   emby,
   esphome,
   evcc,
+  filebrowser,
   fileflows,
   firefly,
   flood,
@@ -191,8 +199,10 @@ const widgets = {
   jdownloader,
   jellyfin: emby,
   jellyseerr,
+  jellystat,
   kavita,
   komga,
+  komodo,
   kopia,
   lidarr,
   linkwarden,
@@ -264,6 +274,7 @@ const widgets = {
   tdarr,
   traefik,
   transmission,
+  trilium,
   tubearchivist,
   truenas,
   unifi,
@@ -273,6 +284,7 @@ const widgets = {
   uptimerobot,
   urbackup,
   vikunja,
+  wallos,
   watchtower,
   wgeasy,
   whatsupdocker,

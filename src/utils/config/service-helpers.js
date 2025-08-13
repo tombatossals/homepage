@@ -295,6 +295,7 @@ export function cleanServiceGroups(groups) {
           // emby, jellyfin
           enableBlocks,
           enableNowPlaying,
+          enableMediaControl,
 
           // emby, jellyfin, tautulli
           enableUser,
@@ -303,6 +304,9 @@ export function cleanServiceGroups(groups) {
 
           // frigate
           enableRecentEvents,
+
+          // gamedig
+          gameToken,
 
           // beszel, glances, immich, komga, mealie, pihole, pfsense, speedtest
           version,
@@ -331,6 +335,13 @@ export function cleanServiceGroups(groups) {
           referrerPolicy,
           src,
 
+          // jellystat
+          days,
+
+          // komodo
+          showSummary,
+          showStacks,
+
           // kopia
           snapshotHost,
           snapshotPath,
@@ -356,11 +367,17 @@ export function cleanServiceGroups(groups) {
           // opnsense, pfsense
           wan,
 
+          // portainer
+          kubernetes,
+
           // prometheusmetric
           metrics,
 
           // proxmox
           node,
+
+          // proxmoxbackupserver
+          datastore,
 
           // speedtest
           bitratePrecision,
@@ -390,6 +407,9 @@ export function cleanServiceGroups(groups) {
 
           // spoolman
           spoolIds,
+
+          // grafana
+          alerts,
         } = widgetData;
 
         let fieldsList = fields;
@@ -434,8 +454,18 @@ export function cleanServiceGroups(groups) {
         if (type === "unifi") {
           if (site) widget.site = site;
         }
+        if (type === "portainer") {
+          if (kubernetes) widget.kubernetes = !!JSON.parse(kubernetes);
+        }
         if (type === "proxmox") {
           if (node) widget.node = node;
+        }
+        if (type === "proxmoxbackupserver") {
+          if (datastore) widget.datastore = datastore;
+        }
+        if (type === "komodo") {
+          if (showSummary !== undefined) widget.showSummary = !!JSON.parse(showSummary);
+          if (showStacks !== undefined) widget.showStacks = !!JSON.parse(showStacks);
         }
         if (type === "kubernetes") {
           if (namespace) widget.namespace = namespace;
@@ -459,6 +489,7 @@ export function cleanServiceGroups(groups) {
           if (wan) widget.wan = wan;
         }
         if (["emby", "jellyfin"].includes(type)) {
+          if (enableMediaControl !== undefined) widget.enableMediaControl = !!JSON.parse(enableMediaControl);
           if (enableBlocks !== undefined) widget.enableBlocks = JSON.parse(enableBlocks);
           if (enableNowPlaying !== undefined) widget.enableNowPlaying = JSON.parse(enableNowPlaying);
         }
@@ -478,11 +509,27 @@ export function cleanServiceGroups(groups) {
         if (["diskstation", "qnap"].includes(type)) {
           if (volume) widget.volume = volume;
         }
+        if (type === "gamedig") {
+          if (gameToken) widget.gameToken = gameToken;
+        }
         if (type === "kopia") {
           if (snapshotHost) widget.snapshotHost = snapshotHost;
           if (snapshotPath) widget.snapshotPath = snapshotPath;
         }
-        if (["beszel", "glances", "immich", "komga", "mealie", "pfsense", "pihole", "speedtest"].includes(type)) {
+        if (
+          [
+            "beszel",
+            "glances",
+            "immich",
+            "komga",
+            "mealie",
+            "pfsense",
+            "pihole",
+            "speedtest",
+            "wgeasy",
+            "grafana",
+          ].includes(type)
+        ) {
           if (version) widget.version = parseInt(version, 10);
         }
         if (type === "glances") {
@@ -556,6 +603,12 @@ export function cleanServiceGroups(groups) {
         }
         if (type === "spoolman") {
           if (spoolIds !== undefined) widget.spoolIds = spoolIds;
+        }
+        if (type === "jellystat") {
+          if (days !== undefined) widget.days = parseInt(days, 10);
+        }
+        if (type === "grafana") {
+          if (alerts) widget.alerts = alerts;
         }
         return widget;
       });
